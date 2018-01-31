@@ -2,7 +2,6 @@ require('minitest/autorun')
 require('minitest/rg')
 
 require_relative('../river.rb')
-# require_relative('../bear.rb')
 require_relative('../fish.rb')
 
 class RiverTest < MiniTest::Test
@@ -24,9 +23,14 @@ class RiverTest < MiniTest::Test
     assert_equal(4, fish_copy.count)
   end
 
-  def test_lose_fish
-    @river.lose_fish
+  def test_can_remove_fish
+    @river.remove_fish()
     assert_equal(3, @river.count_fish)
   end
+
+  # def test_lose_fish
+  #   @river.lose_fish
+  #   assert_equal(3, @river.count_fish)
+  # end
 
 end
